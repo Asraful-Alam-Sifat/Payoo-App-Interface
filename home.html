@@ -6,8 +6,8 @@
     <title>Payoo | Login</title>
 
     <!-- Link TailwindCss & DaisyUI -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- Add Font -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,11 +54,11 @@
         </div>
      
         <div class="banner-card mt-6 grid grid-cols-3 grid-rows-2 gap-4">
-            <button class="btn h-full flex-col  btn-primary btn-soft border-2 border-gray-300 rounded-xl py-5 text-center ">
-            <img class="mx-auto mb-1" src="assets/opt-1.png" alt=""> Add Money
+            <button onclick="showOnly('add-money')" class="btn h-full flex-col  btn-primary btn-soft border-2 border-gray-300 rounded-xl py-5 text-center ">
+            <img  class="mx-auto mb-1" src="assets/opt-1.png" alt=""> Add Money
             </button>
 
-            <button class="btn h-full flex-col  btn-primary btn-soft border-2 border-gray-300 rounded-xl py-5 text-center">
+            <button onclick="showOnly('cashout-container')" class="btn h-full flex-col  btn-primary btn-soft border-2 border-gray-300 rounded-xl py-5 text-center">
                 <img class="mx-auto mb-3" src="assets/opt-2.png" alt="">Cashout
             </button>
 
@@ -66,7 +66,7 @@
                <img class="mx-auto mb-3" src="assets/opt-3.png" alt=""> Transfer Money
             </button>
 
-            <button class="btn h-full flex-col  btn-primary btn-soft border-2 border-gray-300 rounded-x py-5 text-center">
+            <button class="btn h-full flex-col  btn-primary btn-soft border-2 border-gray-300 rounded-xl py-5 text-center">
                 <img class="mx-auto mb-3" src="assets/opt-4.png" alt="">Get Bonus
             </button>
 
@@ -74,7 +74,7 @@
             <img class="mx-auto mb-3" src="assets/opt-5.png" alt="">Pay Bill
             </button>
 
-            <button class="btn h-full flex-col  btn-primary btn-soft border-2 border-gray-300 rounded-xl py-5 text-center  justify-center items-center">
+            <button onclick="showOnly('history')" class="btn h-full flex-col  btn-primary btn-soft border-2 border-gray-300 rounded-xl py-5 text-center  justify-center items-center">
                 <img class="mx-auto mb-3" src="assets/opt-6.png" alt="">Transactions
             </button>
            
@@ -82,9 +82,45 @@
      </section>
 </header>
 
+<main>
+    <!-- Add Money -->
+    <section id="add-money" class=" w-11/12 mx-auto mt-5">
+        <h1 class="font-bold text-lg">Add Money</h1>
+
+          <div class="login-form mt-3">
+        <div class="card bg-base-100 w-[400px] shrink-0 shadow mx-auto rounded-3xl ">
+      <div class="card-body p-10">
+        <fieldset class="fieldset">
+            <label for="selectBank" class="label text-[#080808FF] font-semibold text-base mb-3">Select A Bank</label>
+            <select id="select-bank" class="select select-neutral rounded-full font-normal text-base mb-3">
+                   <option disabled selected>Select Bank</option>
+                   <option>ICC Bank</option>
+                   <option>UCC Bank</option>
+                   <option>IFIC Bank</option>
+            </select>
+
+          <label for="account-num" class="label text-[#080808FF] font-medium text-base mb-3">Bank Account Number</label>
+          <input id="account-num" maxlength="11" minlength="11" type="tel" class="appearance-none input rounded-full py-5 pl-5 border-none bg-base-300 font-normal text-base " placeholder="Enter 11 digit account number" />
+
+
+          <label for="input-diposite" class="label text-[#080808FF] font-medium text-base mt-5 mb-3">Amount to Add</label>
+          <input id="input-diposite" maxlength="11" minlength="11" type="tel" class="appearance-none input rounded-full py-5 pl-5 border-none bg-base-300 font-normal text-base " placeholder="Add Amount to withdraw" />
+
+
+          <label for="pin-num" class="label text-[#080808FF] font-medium text-base mt-5 mb-3">Pin Number</label>
+          <input id="pin-num" maxlength="4" minlength="4" type="password" class="input rounded-full py-5 pl-5 border-none bg-base-300 font-normal text-base" placeholder="Enter 4 digit pin number" />
+       
+          <button id="add-money-btn" class="btn btn-neutral mt-4 bg-primary border-none shadow-none rounded-full">Add Money</button>
+        </fieldset>
+      </div>
+    </div>
+      </div>
+    </section>
+
 <!-- CashOut -->
-    <section class="cashout-container w-11/12 mx-auto mt-5">
+    <section id="cashout-container" class=" w-11/12 mx-auto mt-5">
         <h1 class="font-bold text-lg ">Cash Out</h1>
+
           <div class="login-form mt-3">
         <div class="card bg-base-100 w-[400px] shrink-0 shadow mx-auto rounded-3xl ">
       <div class="card-body p-10">
@@ -106,8 +142,23 @@
     </div>
       </div>
     </section>
+
+    <!-- Transaction -->
+     <section id="history" class="w-11/12 mx-auto mt-5">
+      <div class="flex justify-between">
+        <h1 class="font-bold text-lg mb-6">Transactions History</h1>
+        <a href="#history" class="text-(--primary-font-color)">View All</a>
+      </div>
+      
+      <div id="history-container">
+
+      </div>
+     </section>
+</main>
+
     
     <script src="Script/machin.js"></script>
+    <script src="Script/diposit.js"></script>
     <script src="Script/cashOut.js"></script>
 </body>
 </html>
