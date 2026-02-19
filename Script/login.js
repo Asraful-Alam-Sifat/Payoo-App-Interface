@@ -14,7 +14,7 @@ document.getElementById('login-btn')
             if(numValue === '01566006571' && passValue === '1234'){
                 alert('Login Successfully');
                 //  window.location.replace("/home.html");
-                window.location.assign('/home.html');
+                window.location.assign('./home.html');
             } else{
                 alert('Login Faild. Try Again');
             }
