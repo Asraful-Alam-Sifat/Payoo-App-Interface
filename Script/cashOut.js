@@ -5,13 +5,14 @@ document.getElementById('withdraw-btn')
                 alert('Invalid Agent Number');
                 return;
             }
-            const cashOut = getValueFromInput('input-withdraw');
 
               const pinNum = getValueFromInput('input-pin');
             if(pinNum !== '1234'){
                 alert('Invalid Pin Number');
                 return;
             }
+
+              const cashOut = getValueFromInput('input-withdraw');
             // const availableBalance = getInnerTextFromElement('current-balance');
            const balance = getInnerTextFromElement('current-balance');
 

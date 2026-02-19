@@ -31,9 +31,10 @@
 </style>
     
 </head>
-<body class="min-h-screen max-w-md mx-auto bg-base-300">
-   <header class="pt-5 pb-4 rounded-b-3xl bg-base-100">
-    <section class=" flex justify-between border-y-2 border-gray-300 px-5 py-4 sticky top-0 bg-base-100">
+<body class="min-h-screen max-w-md mx-auto bg-base-300 ">
+
+      <!-- Action Bar -->
+    <section class=" flex justify-between border-y-2 border-gray-300 px-5 py-4 mt-5 sticky z-50 top-0 bg-base-100">
         <div class="logo flex justify-around gap-1.5 ">
             <div class="max-w-14">
             <img src="assets/logo.png" alt="logo-img">
@@ -46,8 +47,10 @@
         <a href="index.html" class="flex gap-1 border-2 border-gray-300 rounded-lg justify-center items-center py-3 px-4 text-(--primary-font-color) text-base font-normal "><img class="max-w-7 max-h-7" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABqElEQVR4nO2WO0skURBGO/UV+lo38AW7/0XMXf0FrkaO+flmujsYhsndDTT1reyKsSAiipEDaqixIj7WQF1RLlSDyKCX6WaYwA8u9KP6nq7qquoKgk81mqIo6paUk/RX0pmkO+CfpGNgU9IE8DUzYBzHnZLmgAdJzx+sR+A38CUVFOgFLt2mBl4ARtz1crncVCqVWgqFwjdJP4B5Sfdme5PP54dTgSWdA+vu2MO+H1g275+AyaCekpQD/jt4Ks9rkSWi8/zaJWZQT0laMfgvrweADkk7wFYacBiGA5Zwj1EU9fhAK/ame2nAtt+iZfpPX2jFnacFSxoz8EZVgziO24FDg7pu1BVkIKvzZ+CkqgFw4NGZqq3t98DFYrEtaSqNBY7fhDqr2gO+G/iosZKrGhzYDzIqJ0njPsYd9s13U0IHvRtIlgJWLXIz9YROG/Qqq57gBX31WxyqZQM3gVxIWgvDsM/DfjAJr4O6OSyr0WcJGLVJoxlotTods3sPSXhr8vTtsAfMJvOUx7A3k+k3BbqAKeAPcOrGW0m3riO55uDqtK4l86nAUy9rfNcaLs/hcQAAAABJRU5ErkJggg==" alt="logout-rounded-left">Log Out</a>
     </section>
 
+
+   <header class=" pb-4 rounded-b-3xl bg-base-100">
     <!-- Banner section -->
-     <section class="mt-8 mx-6 mb-6">
+     <section class=" mx-6 mb-6">
         <div class="banner-contant">
              <h1 class="font-bold text-2xl py-2">Welcome to Pay<span class="text-[#7460ffFF]">oo</span></h1>
         <p class="text-(--primary-font-color) py-4 font-normal text-base">Enjoy easy and convenient financial services with us. Cashout charge is low and</p>  
@@ -62,7 +65,7 @@
                 <img class="mx-auto mb-3" src="assets/opt-2.png" alt="">Cashout
             </button>
 
-            <button class="btn h-full flex-col  btn-primary btn-soft border-2 border-gray-300 rounded-xl px-0 py-5 text-center">
+            <button onclick="showOnly('transfer-container')" class="btn h-full flex-col  btn-primary btn-soft border-2 border-gray-300 rounded-xl px-0 py-5 text-center">
                <img class="mx-auto mb-3" src="assets/opt-3.png" alt=""> Transfer Money
             </button>
 
@@ -143,6 +146,36 @@
       </div>
     </section>
 
+    <!-- Transfer Money -->
+       <section id="transfer-container" class=" w-11/12 mx-auto mt-5">
+        <h1 class="font-bold text-lg ">Transfer Money</h1>
+
+          <div class="login-form mt-3">
+        <div class="card bg-base-100 w-[400px] shrink-0 shadow mx-auto rounded-3xl ">
+      <div class="card-body p-10">
+
+        <fieldset class="fieldset">
+          <label class="label text-[#080808FF] font-medium text-base mb-3">User Account Number</label>
+          <input id="transfering-user-num" maxlength="11" minlength="11" type="tel" class="appearance-none input rounded-full py-5 pl-5 border-none bg-base-300 font-normal text-base " placeholder="Enter 11 digit number" />
+
+
+          <label class="label text-[#080808FF] font-medium text-base mt-5 mb-3">Amount</label>
+          <input id="transfer-amount" maxlength="11" minlength="11" type="tel" class="appearance-none input rounded-full py-5 pl-5 border-none bg-base-300 font-normal text-base " placeholder="Enter amount to Transfer" />
+
+
+          <label class="label text-[#080808FF] font-medium text-base mt-5 mb-3">Pin Number</label>
+          <input id="pin-for-transfer" maxlength="4" minlength="4" type="password" class="input rounded-full py-5 pl-5 border-none bg-base-300 font-normal text-base" placeholder="Enter 4 digit pin number" />
+       
+          <button id="transfer-btn" class="btn btn-neutral mt-4 bg-primary border-none shadow-none rounded-full">Transfer Money</button>
+        </fieldset>
+
+      </div>
+    </div>
+      </div>
+    </section>
+
+
+
     <!-- Transaction -->
      <section id="history" class="w-11/12 mx-auto mt-5">
       <div class="flex justify-between">
@@ -160,6 +193,7 @@
     <script src="Script/machin.js"></script>
     <script src="Script/diposit.js"></script>
     <script src="Script/cashOut.js"></script>
+    <script src="Script/transfer.js"></script>
 </body>
 </html>
     
