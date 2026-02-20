@@ -73,8 +73,8 @@
                 <img class="mx-auto mb-3" src="assets/opt-4.png" alt="">Get Bonus
             </button>
 
-            <button class="btn h-full flex-col  btn-primary btn-soft border-2 border-gray-300 rounded-xl py-5 text-center">
-            <img class="mx-auto mb-3" src="assets/opt-5.png" alt="">Pay Bill
+            <button onclick="showOnly('pay-bill')" class="btn h-full flex-col  btn-primary btn-soft border-2 border-gray-300 rounded-xl py-5 text-center">
+            <img  class="mx-auto mb-3" src="assets/opt-5.png" alt="">Pay Bill
             </button>
 
             <button onclick="showOnly('history')" class="btn h-full flex-col  btn-primary btn-soft border-2 border-gray-300 rounded-xl py-5 text-center  justify-center items-center">
@@ -175,6 +175,39 @@
     </section>
 
 
+    <!-- Pay Bill -->
+    <section id="pay-bill" class=" w-11/12 mx-auto mt-5">
+        <h1 class="font-bold text-lg">Pay Bill</h1>
+
+          <div class="login-form mt-3">
+        <div class="card bg-base-100 w-[400px] shrink-0 shadow mx-auto rounded-3xl ">
+      <div class="card-body p-10">
+        <fieldset class="fieldset">
+            <label for="select-pay" class="label text-[#080808FF] font-semibold text-base mb-3">Select To Pay</label>
+            <select id="select-pay" class="select select-neutral rounded-full font-normal text-base mb-3">
+                   <option disabled selected>Select Bank</option>
+                   <option>ICC Bank</option>
+                   <option>UCC Bank</option>
+                   <option>IFIC Bank</option>
+            </select>
+
+          <label for="biller-num" class="label text-[#080808FF] font-medium text-base mb-3">Biller Account Number</label>
+          <input id="biller-num" maxlength="11" minlength="11" type="tel" class="appearance-none input rounded-full py-5 pl-5 border-none bg-base-300 font-normal text-base " placeholder="Enter account number" />
+
+
+          <label for="input-pay-amount" class="label text-[#080808FF] font-medium text-base mt-5 mb-3">Amount to Pay</label>
+          <input id="input-pay-amount" maxlength="11" minlength="11" type="tel" class="appearance-none input rounded-full py-5 pl-5 border-none bg-base-300 font-normal text-base " placeholder="Add Amount to Pay" />
+
+
+          <label for="pin-num-for-payBill" class="label text-[#080808FF] font-medium text-base mt-5 mb-3">Pin Number</label>
+          <input id="pin-num-for-payBill" maxlength="4" minlength="4" type="password" class="input rounded-full py-5 pl-5 border-none bg-base-300 font-normal text-base" placeholder="Enter pin number" />
+       
+          <button id="pay-bill-btn" class="btn btn-neutral mt-4 bg-primary border-none shadow-none rounded-full">Pay Bill</button>
+        </fieldset>
+      </div>
+    </div>
+      </div>
+    </section>
 
     <!-- Transaction -->
      <section id="history" class="w-11/12 mx-auto mt-5">
@@ -189,11 +222,13 @@
      </section>
 </main>
 
+
     
     <script src="Script/machin.js"></script>
     <script src="Script/diposit.js"></script>
     <script src="Script/cashOut.js"></script>
     <script src="Script/transfer.js"></script>
+    <script src="Script/payBill.js"></script>
 </body>
 </html>
     
